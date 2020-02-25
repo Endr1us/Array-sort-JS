@@ -50,50 +50,8 @@ let arr = [
   { name: "Yrewn", close: ["Hpgemo", "Ppaehhdl"] },
   { name: "Ytfil", close: ["Fkpjh", "Ezwwdfd"] }
 ];
-/*
+
 function placeGuests(arr) {
-  let result = [];
-
-  arr.sort((a, b) => a.name - b.name);
-
-  let mapper = JSON.parse(JSON.stringify(arr));
-  for (let i = 0; i <= arr.length - 1; i++) {
-    mapper[i].close.sort();
-  }
-  let arrSize = arr.length;
-
-  result.push(arr[0]);
-  arr.shift(arr[0]);
-
-  let j = 1;
-  while (j < arrSize) {
-    result.push(arr[0]);
-    if ((result[j].name = mapper[0].close[0])) {
-      arr.shift(arr[0]);
-      mapper.shift(mapper[0]);
-    } else if ((result[j].name = mapper[0].close[1])) {
-      arr.shift(arr[0]);
-      mapper.shift(mapper[0]);
-    } else {
-      arr.push(arr[0]);
-      arr.shift(arr[0]);
-      mapper.push(mapper[0]);
-      mapper.shift(mapper[0]);
-      result.shift(result[j]);
-    }
-    j++;
-  }
-
-  console.log("arr", arr.length, arr);
-  console.log("mapper", mapper.length, mapper);
-  console.log("new_result", result.length, result);
-
-  return result;
-}
-
-placeGuests(arr);
-*/
-function sortArray(arr) {
   const firstIndex = 0;
   if (arr.length === firstIndex) {
     return arr;
@@ -115,7 +73,7 @@ function sortArray(arr) {
     for (let j = firstIndex; j < close.length; j++) {
       close.sort();
       const closeName = close[j];
-      console.log(close);
+      //console.log(close);
       if (closeName in data) {
         const people = data[closeName];
         result.push(people);
@@ -131,4 +89,5 @@ function sortArray(arr) {
   return result;
 }
 
-sortArray(arr);
+placeGuests(arr);
+
